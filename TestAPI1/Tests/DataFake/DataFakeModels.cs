@@ -124,19 +124,30 @@ namespace TestAPI1.Tests.DataFake
             };
         }
         public string GetRandomUserName()
-        {                      
-            Random randomGenerator = new Random();
-            int randomInt = randomGenerator.Next(1000);
-            string randomUserName = "Nikola" + randomInt;
+        {
+            var chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[8];
+            var random = new Random();
 
-            return randomUserName;        
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+            var randomUserName = new String(stringChars);
+            return randomUserName;
         }
         public string GetRandomEmail()
         {
-            Random randomGenerator = new Random();
-            int randomInt = randomGenerator.Next(1000);
-            string randomEmail = "username" + randomInt + "@gmail.com";
+            var chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[8];
+            var random = new Random();
 
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+            var radnomString = new String(stringChars);
+            string randomEmail = radnomString + "@somemail.com";
             return randomEmail;
         }
         public string GetRandomPassword()
